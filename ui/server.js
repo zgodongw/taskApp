@@ -3,10 +3,11 @@ var app = express();
 
 
 app.use(express.static("./")); // myApp will be the same folder name.
-app.get('/', function (req, res,next) {
-res.sendFile('./index.html'); 
+app.get('/*', function (req, res,next) {
+    res.sendFile( __dirname + '/index.html'); 
 });
 
-app.listen(8080, 'localhost');
+var PORT = 3000
+app.listen(PORT, 'localhost');
 
-console.log("MyProject Server is Listening on port 8080");
+console.log("Server is Listening on port " + PORT);
