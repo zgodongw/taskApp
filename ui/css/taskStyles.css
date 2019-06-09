@@ -1,3 +1,60 @@
 .fill {
     width: 100%;
 }
+
+[type="radio"].color1:checked+span:after {
+    background-color: #546e7a;
+}
+ 
+[type="radio"].color1:checked+span:before, [type="radio"].color1:checked+span:after {
+    border: 2px solid #546e7a;
+}
+
+[type="radio"].color1:checked+ span:before, [type="radio"].color1:checked+ span:after {
+    border: 2px solid #546e7a;
+}
+
+
+
+
+[type="radio"].color2:checked+span:after {
+    background-color: #388e3c;
+}
+
+[type="radio"].color2:checked+span:before, [type="radio"].color2:checked+span:after {
+    border: 2px solid #388e3c;
+}
+
+
+
+
+
+[type="radio"].color3:checked+span:after {
+    background-color: #424242;
+}
+
+[type="radio"].color3:checked+span:before, [type="radio"].color3:checked+span:after {
+    border: 2px solid #424242;
+}
+
+
+
+
+
+[type="radio"].color4:checked+span:after {
+    background-color: #1565c0;
+}
+
+[type="radio"].color4:checked+span:before, [type="radio"].color4:checked+span:after {
+    border: 2px solid #1565c0;
+}
+
+
+
+[type="radio"].color5:checked+span:after {
+    background-color: #ad1457;
+}
+
+[type="radio"].color5:checked+span:before, [type="radio"].color5:checked+span:after {
+    border: 2px solid #ad1457;
+}

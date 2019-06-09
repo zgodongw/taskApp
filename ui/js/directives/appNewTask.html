@@ -1,0 +1,47 @@
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <h4>Create New Task</h4>
+        <form action="">
+            <div class="row">
+                <h6>Select Color</h6>
+                <label>
+                        <input ng-model="color" type="radio" name="color" class="color1" value="#546e7a" checked/>
+                        <span ></span>
+                </label>
+                <label>
+                        <input ng-model="color" type="radio" name="color" class="color2" value="#388e3c"/>
+                        <span ></span>
+                </label>
+                <label>
+                        <input ng-model="color" type="radio" name="color" class="color3" value="#424242" />
+                        <span ></span>
+                </label>
+                <label>
+                        <input ng-model="color" type="radio" name="color" class="color4" value="#1565c0" />
+                        <span ></span>
+                </label>
+                <label>
+                        <input ng-model="color" type="radio" name="color" class="color5" value="#ad1457" />
+                        <span ></span>
+                </label>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input ng-model="title" placeholder="Title" id="title" type="text" class="validate" required>
+                    <label for="title">Task Title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea ng-model="desc" placeholder="Description" id="description" class="materialize-textarea" required></textarea>
+                    <label for="description">Task Description</label>
+                </div>
+            </div>
+            <h6 class="red-text" ng-if="errors">Error: {{errors}}</h6>            
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+        <a ng-click="submit()" class="waves-effect waves-green btn">Done</a>
+    </div>
+</div>

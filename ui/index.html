@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tasks</title>
      <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link rel="stylesheet" href="utils/css/materialize/materialize.min.css">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link rel="stylesheet" href="css/taskStyles.css">
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
@@ -26,25 +26,83 @@
         <div class="row">
             <div class="col s3" ng-repeat="type in tasks.types">
                 <div ng-repeat="task in tasks.tasks | tasktype: type.id">
-                    <app-task task="task" move-forward="tasks.moveForward" ></app-task>
+                    <app-task task="task" move-forward="tasks.moveForward" move-back="tasks.moveBack"></app-task>
                 </div>
             </div>
         </div>
         <app-fab></app-fab>
 
         <!-- Edit Task Modal -->
-
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Edit Task</h4>
+                    <form action="">
+                        <div class="row">
+                            <h6>Select Color</h6>
+                            <label>
+                                    <input type="radio" name="color" class="color1" value="" />
+                                    <span ></span>
+                            </label>
+                            <label>
+                                    <input type="radio" name="color" class="color2" />
+                                    <span ></span>
+                            </label>
+                            <label>
+                                    <input type="radio" name="color" class="color3" />
+                                    <span ></span>
+                            </label>
+                            <label>
+                                    <input type="radio" name="color" class="color4" />
+                                    <span ></span>
+                            </label>
+                            <label>
+                                    <input type="radio" name="color" class="color5" />
+                                    <span ></span>
+                            </label>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="title" type="text" class="validate">
+                                <label for="title">Task Title</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="due" type="text" class="datepicker">
+                                <label for="due">Task Due Date</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <textarea id="description" class="materialize-textarea"></textarea>
+                                <label for="description">Task Description</label>
+                            </div>
+                        </div>
+                        
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+                    <a href="" class="modal-close waves-effect waves-green btn">Done</a>
+                </div>
+            </div>
         <!-- Add New Task Modal -->
-
-        
+        <app-new-task add-new="tasks.addNew"></app-new-task>
 
         <!-- Add New Task Type Modal -->
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <h4>Add New Section</h4>
+                    <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+                    <a href="" class="modal-close waves-effect waves-green btn">Done</a>
+                </div>
+            </div>
 
 
     </div>
-   
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
 
     <script src="js/core/core.js"></script>
     <script src="js/core/filters/tasktype.js"></script>
@@ -56,7 +114,9 @@
     <!-- Directives -->
     <script src="js/directives/appFab.js"></script>
     <script src="js/directives/appTask.js"></script>
+    <script src="js/directives/appNewTask.js"></script>
 
     <!-- Services -->
+    <script src="utils/js/materialize/materialize.min.js"></script>
 </body>
 </html>

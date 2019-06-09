@@ -1,10 +1,15 @@
-<div class="card blue-grey darken-1">
+<div class="card {{task.color}}">
     <div class="card-content white-text">
         <span class="card-title">{{task.title}}</span>
+        
         <p>{{task.desc}}</p>
     </div>
     <div class="card-action">
-        <a href="#">Edit</a>
-        <a ng-click="moveForward(task.id)">Move To Next</a>
+        <a class="modal-trigger btn-flat" href="#modal1">Edit</a> 
+        <a class="btn-flat" href="">Delete</a><br/>
+        <a class="btn-flat" ng-click="moveBack(task.id)"><i class="material-icons">arrow_back</i></a>
+        
+        <a class="btn-flat" ng-click="moveForward(task.id)"><i class="material-icons">arrow_forward</i></a>
     </div>
+    
 </div>

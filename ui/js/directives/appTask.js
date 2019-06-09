@@ -3,9 +3,13 @@ app.directive("appTask", function() {
         restrict: "E",
         scope: {
             task: "=",
-            moveForward: "="
+            moveForward: "=",
+            moveBack: "="
         },
-        templateUrl: "js/directives/appTask.html"
+        templateUrl: "js/directives/appTask.html",
+        controller: function() {
+            //M.AutoInit()
+        }
     }
 
 })
