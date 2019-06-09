@@ -27,13 +27,24 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
         },
     ]
     
+    /*
+    TODO: Reneber to add color
+    */ 
     taskList.tasks = [
         {
+            id: 1,
             title: "Hello",
             desc: "World",
             type: 1
         },
         {
+            id: 2,
+            title: "Hello",
+            desc: "World",
+            type: 1
+        },
+        {
+            id: 3,
             title: "Next",
             desc: "One",
             type: 2
@@ -42,10 +53,33 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
 
     $interval(function() {
             taskList.tasks.push({
+                id: 4,
                 title: "Testing",
                 desc: "Testing desc",
                 type: 2,
             })}, 3000, 1 );
+
+    taskList.add = function () {
+        taskList.tasks.push({
+            title: "Testing",
+            desc: "Testing desc",
+            type: 2,
+        })
+        console.log("pushed!")
+    }
+
+    taskList.moveForward = function (index) {
+
+        taskList.tasks.forEach(item => {
+            if (item.id === index) {
+                if (item.type < 4) {
+                    item.type = item.type + 1
+                }
+            }
+        })
+        
+        
+    }
 
 
 }])
