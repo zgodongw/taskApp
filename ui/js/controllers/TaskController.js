@@ -1,18 +1,18 @@
 app.controller("TaskController", ["$scope", "$interval",function($scope, $interval) {
-    var taskList = this;
+    var taskCrtl = this;
 
     var colors = {
-        "#546e7a": "blue-grey darken-1",
+        "#546e7a":"blue-grey darken-1",
         "#388e3c":"green darken-2",
         "#424242":"grey darken-3",
         "#1565c0":"blue darken-3",
         "#ad1457":"pink darken-3",
     }
 
-    taskList.newtitle = ""
-    taskList.newdesc = ""
+    taskCrtl.newtitle = ""
+    taskCrtl.newdesc = ""
 
-    taskList.types = [
+    taskCrtl.types = [
         {
             id: 1,
             name: "Pending Tasks",
@@ -35,7 +35,7 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
         },
     ]
     
-    taskList.tasks = [
+    taskCrtl.tasks = [
         {
             id: 1,
             title: "Hello",
@@ -59,10 +59,9 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
         }
     ]
 
+taskCrtl.moveForward = function (index) {
 
-    taskList.moveForward = function (index) {
-
-        taskList.tasks.forEach(item => {
+     taskCrtl.tasks.forEach(item => {
             if (item.id === index) {
                 if (item.type < 4) {
                     item.type = item.type + 1
@@ -72,9 +71,9 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
         
     }
 
-    taskList.moveBack = function (index) {
+taskCrtl.moveBack = function (index) {
 
-        taskList.tasks.forEach(item => {
+     taskCrtl.tasks.forEach(item => {
             if (item.id === index) {
                 if (item.type > 1) {
                     item.type = item.type - 1
@@ -85,16 +84,16 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
     }
 
 
-    taskList.addNew = function (title, desc, color) {
+taskCrtl.addNew = function (title, desc, color) {
         var cl;
         var id = Math.floor(Math.random()  * 1000) + 10
-        if (colors[color]) {
-            cl = colors[color];
+        if (color) {
+            cl = color;
         } else {
             cl = "blue-grey darken-1"
         }
 
-        taskList.tasks.push({
+     taskCrtl.tasks.push({
             id: id,
             title: title,
             desc: desc,
@@ -104,5 +103,38 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
         console.log("Success")
     }
 
+taskCrtl.editTask = function (id, title, desc, color) {
+        taskCrtl.tasks.forEach(item => {
+            if (item.id === id) {
+                item.title = title;
+                item.desc = desc;
+                item.color = color;
+            }
+            return item;
+        })
+    }
+
+taskCrtl.deleteTask = function (id) {
+        taskCrtl.tasks = taskCrtl.tasks.filter(function (item) {
+            return item.id !== id
+        })
+    }
+
+taskCrtl.selected = {
+        id: Number,
+        title: "",
+        desc: "",
+        type: Number,
+        color: String
+    }
+
+taskCrtl.setSelected = function (task) {
+     taskCrtl.selected = task;
+    }
+
+taskCrtl.removeSelected = function () {
+     taskCrtl.selected = null;
+     console.log(taskCrtl.selected)
+    }
 
 }])

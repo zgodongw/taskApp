@@ -4,16 +4,22 @@ app.directive("appTask", function() {
         scope: {
             task: "=",
             moveForward: "=",
-            moveBack: "="
+            moveBack: "=",
+            setSelected: "=",
+            deleteTask: "="
         },
         templateUrl: "js/directives/appTask/appTask.html",
         controller: function() {
             //M.AutoInit()
         },
         link: function($scope, elem, attr, ctrl) {
-            $scope.test = function (id) {
-                console.log("Testing edit modal: " + id);
-                
+            $scope.edit = function (id) {
+                //console.log("Testing edit modal: " + id);
+                $scope.setSelected($scope.task);
+            }
+
+            $scope.delete = function (id) {
+                $scope.deleteTask(id);
             }
         }
     }

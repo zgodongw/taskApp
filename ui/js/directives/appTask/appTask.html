@@ -5,10 +5,9 @@
         <p>{{task.desc}}</p>
     </div>
     <div class="card-action">
-        <a class="modal-trigger btn-flat" ng-click="test(task.id)" href="#modal1">Edit</a> 
-        <a class="btn-flat" href="">Delete</a><br/>
+        <a class="modal-trigger btn-flat" ng-click="edit(task.id)" href="#modal1">Edit</a> 
+        <a class="btn-flat" ng-click="delete(task.id)" href="">Delete</a><br/>
         <a class="btn-flat" ng-click="moveBack(task.id)"><i class="material-icons">arrow_back</i></a>
         <a class="btn-flat" ng-click="moveForward(task.id)"><i class="material-icons">arrow_forward</i></a>
-    </div>
-    
+    </div>  
 </div>

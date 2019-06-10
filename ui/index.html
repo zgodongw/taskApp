@@ -26,30 +26,29 @@
         <div class="row">
             <div class="col s3" ng-repeat="type in tasks.types">
                 <div ng-repeat="task in tasks.tasks | tasktype: type.id">
-                    <app-task task="task" move-forward="tasks.moveForward" move-back="tasks.moveBack"></app-task>
+                    <app-task task="task" move-forward="tasks.moveForward" move-back="tasks.moveBack" set-selected="tasks.setSelected" delete-task="tasks.deleteTask"></app-task>
                 </div>
             </div>
         </div>
         <app-fab></app-fab>
 
         <!-- Edit Task Modal -->
-        <app-edit-modal></app-edit-modal>
+        <app-edit-modal selected="tasks.selected" remove-selected="tasks.removeSelected" edit-task="tasks.editTask"></app-edit-modal>
+
         <!-- Add New Task Modal -->
         <app-new-task add-new="tasks.addNew"></app-new-task>
 
         <!-- Add New Task Type Modal -->
-            <div id="modal3" class="modal">
-                <div class="modal-content">
-                    <h4>Add New Section</h4>
-                    <p>A bunch of text</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
-                    <a href="" class="modal-close waves-effect waves-green btn">Done</a>
-                </div>
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <h4>Add New Section</h4>
+                <p>Feature comming soon</p>
             </div>
-
-
+            <div class="modal-footer">
+                <a href="" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+                <a href="" class="modal-close waves-effect waves-green btn">Done</a>
+            </div>
+        </div>
     </div>
     
 
