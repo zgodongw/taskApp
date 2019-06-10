@@ -6,9 +6,15 @@ app.directive("appTask", function() {
             moveForward: "=",
             moveBack: "="
         },
-        templateUrl: "js/directives/appTask.html",
+        templateUrl: "js/directives/appTask/appTask.html",
         controller: function() {
             //M.AutoInit()
+        },
+        link: function($scope, elem, attr, ctrl) {
+            $scope.test = function (id) {
+                console.log("Testing edit modal: " + id);
+                
+            }
         }
     }
 

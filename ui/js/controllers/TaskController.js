@@ -35,9 +35,6 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
         },
     ]
     
-    /*
-    TODO: Remeber to add color
-    */ 
     taskList.tasks = [
         {
             id: 1,
@@ -74,6 +71,7 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
         })
         
     }
+
     taskList.moveBack = function (index) {
 
         taskList.tasks.forEach(item => {

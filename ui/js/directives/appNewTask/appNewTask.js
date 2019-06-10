@@ -4,7 +4,7 @@ app.directive("appNewTask", function () {
         scope: {
             addNew: "="
         },
-        templateUrl: "js/directives/appNewTask.html",
+        templateUrl: "js/directives/appNewTask/appNewTask.html",
         controller: function () {
             M.AutoInit()
         
