@@ -10,6 +10,6 @@ public interface TaskDao {
     Task insertTask(Task task);
     List<Task> selectAllTasks();
     Optional<Task> selectOneTask(int id);
-    Task updateOneTask(int id);
-    Task deleteOneTask(int id);
+    Optional<Task> updateOneTask(int id, Task task);
+    Optional<Task> deleteOneTask(int id);
 }

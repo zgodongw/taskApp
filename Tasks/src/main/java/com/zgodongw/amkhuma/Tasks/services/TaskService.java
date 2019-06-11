@@ -18,11 +18,24 @@ public class TaskService {
         this.taskDao = taskDao;
     }
 
-    public List<Task> selectAllTasks() {
+    public List<Task> getAllTasks() {
         return taskDao.selectAllTasks();
     }
 
+    public Task getOneTask(int id) {
+        return taskDao.selectOneTask(id).orElse(null);
+    }
+
+
     public Task createNewTask(Task task) {
         return taskDao.insertTask(task);
+    }
+
+    public Task updateOneTask(int id, Task task) {
+        return taskDao.updateOneTask(id,task).orElse(null);
+    }
+
+    public Task deleteTask(int id) {
+        return  taskDao.deleteOneTask(id).orElse(null);
     }
 }
