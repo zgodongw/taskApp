@@ -38,25 +38,25 @@ app.controller("TaskController", ["$scope", "$interval",function($scope, $interv
     taskCrtl.tasks = [
         {
             id: 1,
-            title: "Hello",
-            desc: "World",
-            type: 1,
-            color: "blue-grey darken-1"
-        },
-        {
-            id: 2,
-            title: "Do stuff",
-            desc: "Get it done ASAP",
+            title: "Hibernate Video",
+            desc: "Download hibernate video from Derek Banas on youtube.",
             type: 1,
             color: "green darken-2"
         },
         {
+            id: 2,
+            title: " DB Connection Video",
+            desc: "Download db connect video from Amigoscode on youtube.",
+            type: 1,
+            color: "blue-grey darken-1"
+        },
+        {
             id: 3,
-            title: "Next",
-            desc: "One",
-            type: 2,
-            color: "grey darken-3"
-        }
+            title: "Spring Boot and MySql Hibernate",
+            desc: "Visit: https://java2blog.com/spring-boot-angularjs-example/ for Spring boot and hibernate Mysql config,  then follow the tutorial.",
+            type: 1,
+            color: "blue darken-3"
+        }   
     ]
 
 taskCrtl.moveForward = function (index) {
