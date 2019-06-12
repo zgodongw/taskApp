@@ -26,7 +26,6 @@ public class TaskService {
         return taskDao.selectOneTask(id).orElse(null);
     }
 
-
     public Task createNewTask(Task task) {
         return taskDao.insertTask(task);
     }

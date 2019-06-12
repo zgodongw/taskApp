@@ -1,5 +1,6 @@
 package com.zgodongw.amkhuma.Tasks.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Task")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Task {
 
     @Id
