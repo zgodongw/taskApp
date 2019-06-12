@@ -1,7 +1,7 @@
 CREATE TABLE Task (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    t_desc VARCHAR(255) NOT NULL,
-    t_type INT(11) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    type INT(11) NOT NULL,
     color VARCHAR(255) NOT NULL
     );
