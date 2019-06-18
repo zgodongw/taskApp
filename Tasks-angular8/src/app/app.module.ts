@@ -10,6 +10,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { TaskComponent } from './tasks/task/task.component';
 import { CreateModalComponent } from './create-modal/create-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
+import { TaskTypePipe } from './pipes/type.pipe'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
     TasksComponent,
     TaskComponent,
     CreateModalComponent,
-    EditModalComponent
+    EditModalComponent,
+    TaskTypePipe
   ],
   imports: [
     BrowserModule,

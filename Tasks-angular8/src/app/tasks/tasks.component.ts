@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from '../models/Task';
+import { TaskService } from '../services/task.service';
+import { TaskType } from '../models/TaskType';
+import { TaskTypeService } from '../services/task-type.service';
 
 @Component({
   selector: 'app-tasks',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
 
-  constructor() { }
+  tasks: Task[];
+  taskTypes: TaskType[];
 
-  ngOnInit() {
+  constructor(private taskService: TaskService, private taskTypeService: TaskTypeService) {
+
   }
 
+  ngOnInit() {
+    this.taskTypeService.getTaskTypes().subscribe(types => this.taskTypes = types);
+    this.taskService.getTasks().subscribe(tasks => this.tasks = tasks);
+  }
+
+  ngOnChanges() {
+    console.log("changes occured");
+    
+  }
 }

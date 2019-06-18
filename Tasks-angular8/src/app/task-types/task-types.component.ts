@@ -19,7 +19,6 @@ export class TaskTypesComponent implements OnInit {
 
   getTaskTypes() : void {
     this.taskTypeService.getTaskTypes().subscribe(types => this.taskTypes = types)
-    console.log(this.taskTypes)
   }
  
 }
