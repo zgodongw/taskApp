@@ -1,3 +1,7 @@
-<p>
-  task-types works!
-</p>
+<div class="row">
+    <ng-container *ngFor="let type of taskTypes">
+        <div class="col s3">
+            <div class="waves-effect waves-light btn fill {{type.colour}}">{{type.name}}</div>
+        </div>
+    </ng-container>
+</div> 
