@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgModel} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 
@@ -22,6 +23,7 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
   ],
   imports: [
     BrowserModule,
+    NgModel
   ],
   providers: [],
   bootstrap: [AppComponent]
