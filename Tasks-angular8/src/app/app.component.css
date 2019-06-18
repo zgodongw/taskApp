@@ -1,0 +1,9 @@
+.container {
+    max-width: 90vw;
+    min-height: 90vh;
+    margin: auto;
+}
+
+.header {
+    background-color: #00000008;
+}

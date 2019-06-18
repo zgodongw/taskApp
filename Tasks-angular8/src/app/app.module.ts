@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 import { TaskTypesComponent } from './task-types/task-types.component';
 import { TaskTypeComponent } from './task-types/task-type/task-type.component';
 import { TasksComponent } from './tasks/tasks.component';
@@ -23,8 +22,6 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
