@@ -1,3 +1,47 @@
-<p>
-  edit-modal works!
-</p>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+      <h4>Edit Task</h4>
+      <form action="">
+          <div class="row">
+              <h6>Select Color</h6>
+              <label>
+                      <input [(ngModel)]="color" type="radio" name="color" class="color1" value="blue-grey darken-1"/>
+                      <span ></span>
+              </label>
+              <label>
+                      <input [(ngModel)]="color" type="radio" name="color" class="color2" value="green darken-2"/>
+                      <span ></span>
+              </label>
+              <label>
+                      <input [(ngModel)]="color" type="radio" name="color" class="color3" value="grey darken-3" />
+                      <span ></span>
+              </label>
+              <label>
+                      <input [(ngModel)]="color" type="radio" name="color" class="color4" value="blue darken-3" />
+                      <span ></span>
+              </label>
+              <label>
+                      <input [(ngModel)]="color" type="radio" name="color" class="color5" value="pink darken-3" />
+                      <span ></span>
+              </label>
+          </div>
+          <div class="row">
+              <div class="input-field col s6">
+                  <input [(ngModel)]="title" placeholder="Title" id="title" type="text" class="validate" name="title" required>
+                  <label for="title">Task Title</label>
+              </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s6">
+                  <textarea [(ngModel)]="desc" placeholder="Description" id="description" class="materialize-textarea" name="desc" required></textarea>
+                  <label for="description">Task Description</label>
+              </div>
+          </div>
+          <h6 class="red-text" *ngIf="errors">Error: {{errors}}</h6>            
+      </form>
+  </div>
+  <div class="modal-footer">
+      <a (click)="cancel()" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+      <a (click)="submit()" class="waves-effect waves-green btn">Done</a>
+  </div>
+</div>

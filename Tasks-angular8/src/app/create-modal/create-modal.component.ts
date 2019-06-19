@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateModalComponent implements OnInit {
 
+  color: String;
+
+  title: String;
+
+  desc: String;
+
+  errors: String;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  submit() {
+    
   }
 
 }

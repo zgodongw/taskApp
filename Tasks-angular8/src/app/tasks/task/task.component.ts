@@ -26,12 +26,11 @@ export class TaskComponent implements OnInit {
   }
 
   moveBack(id: Number) {
-    
+    this.taskService.moveBackWard(id);
   }
 
   moveForward(id: Number) {
-    console.log("Moving forward")
-    this.taskService.moveForward(id)
+    this.taskService.moveForward(id);
   }
 
 }

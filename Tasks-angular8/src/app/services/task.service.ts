@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs'
+import { Observable, of, BehaviorSubject } from 'rxjs'
 import { Task } from '../models/Task';
 
 @Injectable({
@@ -29,7 +29,7 @@ export class TaskService {
         type: 2,
         color: "grey darken-3"
     }
-]
+  ]
 
   constructor() { }
 
@@ -41,14 +41,20 @@ export class TaskService {
   moveForward(id: Number) {
     this.tasks.forEach(item => {
       if (item.id === id) {
-          if (item.type < 4) {
-              item.type = item.type + 1
-          }
+        if (item.type < 4) {
+            item.type = item.type + 1
+        }
       }
-  })
+    })
   }
 
   moveBackWard(id: Number) {
-
+    this.tasks.forEach(item => {
+      if (item.id === id) {
+        if (item.type > 1) {
+            item.type = item.type - 1
+        }
+      }
+    })
   }
 }

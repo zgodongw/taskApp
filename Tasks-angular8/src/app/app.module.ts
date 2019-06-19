@@ -10,7 +10,8 @@ import { TasksComponent } from './tasks/tasks.component';
 import { TaskComponent } from './tasks/task/task.component';
 import { CreateModalComponent } from './create-modal/create-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
-import { TaskTypePipe } from './pipes/type.pipe'
+import { TaskTypePipe } from './pipes/type.pipe';
+import { FabComponent } from './fab/fab.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TaskTypePipe } from './pipes/type.pipe'
     TaskComponent,
     CreateModalComponent,
     EditModalComponent,
-    TaskTypePipe
+    TaskTypePipe,
+    FabComponent
   ],
   imports: [
     BrowserModule,
