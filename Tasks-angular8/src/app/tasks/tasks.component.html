@@ -1,5 +1,6 @@
-<div class="row">
+<div class="row" *ngIf="tasks | async; let tasks; else loading;">
     <div class="col s3" *ngFor = "let type of taskTypes">
         <app-task *ngFor = "let task of tasks | tasktype: type.id" [task]="task"></app-task>
     </div>
 </div>
+<ng-template #loading>Loading User Data...</ng-template>

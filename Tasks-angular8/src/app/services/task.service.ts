@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, BehaviorSubject } from 'rxjs'
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs'
+import { map, tap } from 'rxjs/operators';
 import { Task } from '../models/Task';
 
 @Injectable({
@@ -7,7 +9,7 @@ import { Task } from '../models/Task';
 })
 export class TaskService {
 
-  tasks: Task[] = [
+  tasksarray: Task[] = [
     {
         id: 1,
         title: "Hello",
@@ -31,30 +33,52 @@ export class TaskService {
     }
   ]
 
-  constructor() { }
+  private tasks: Observable<Task[]>;
+
+  urlString: string = "http://localhost:8080/api/tasks"
+
+  constructor(private http: HttpClient) { }
 
   getTasks(): Observable<Task[]> {
-
-    return of(this.tasks);
+    this.tasks = this.http.get<Task[]>(this.urlString);
+    return (this.tasks);
   }
 
+
+
+
   moveForward(id: Number) {
-    this.tasks.forEach(item => {
-      if (item.id === id) {
-        if (item.type < 4) {
-            item.type = item.type + 1
+    // this.tasksarray.forEach(item => {
+    //   if (item.id === id) {
+    //     if (item.type < 4) {
+    //         item.type = item.type + 1
+    //     }
+    //   }
+    // })
+    console.log("attempting to mutate");
+    
+    this.tasks.pipe(
+      map(tasks => tasks.map(item => {
+        if (item.id === id) {
+          if (item.type > 1) {
+              item.type = item.type + 1
+          }
         }
-      }
-    })
+        return item;
+      })
+      
+      ),
+      //tap(tasks => console.log(tasks))
+    ).subscribe()
   }
 
   moveBackWard(id: Number) {
-    this.tasks.forEach(item => {
-      if (item.id === id) {
-        if (item.type > 1) {
-            item.type = item.type - 1
-        }
-      }
-    })
+    // this.tasks?.forEach(item => {
+    //   if (item.id === id) {
+    //     if (item.type > 1) {
+    //         item.type = item.type - 1
+    //     }
+    //   }
+    // })
   }
 }

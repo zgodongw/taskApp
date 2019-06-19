@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import M from 'materialize-css';
 
 @Component({
   selector: 'app-create-modal',
@@ -21,7 +22,8 @@ export class CreateModalComponent implements OnInit {
   }
 
   submit() {
-    
+    let elem = document.querySelector('#modal2');
+    M.Modal.getInstance(elem).close();
   }
 
 }

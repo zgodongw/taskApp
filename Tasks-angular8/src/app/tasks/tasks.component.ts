@@ -1,4 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs'
+import { share } from 'rxjs/operators';
+
 import { Task } from '../models/Task';
 import { TaskService } from '../services/task.service';
 import { TaskType } from '../models/TaskType';
@@ -12,7 +15,7 @@ import { TaskTypeService } from '../services/task-type.service';
 })
 export class TasksComponent implements OnInit {
 
-  tasks: Task[];
+  tasks: Observable<Task[]>;
   taskTypes: TaskType[];
 
   constructor(private taskService: TaskService, private taskTypeService: TaskTypeService) {
@@ -21,11 +24,7 @@ export class TasksComponent implements OnInit {
 
   ngOnInit() {
     this.taskTypeService.getTaskTypes().subscribe(types => this.taskTypes = types);
-    this.taskService.getTasks().subscribe(tasks => this.tasks = tasks);
+    this.tasks = this.taskService.getTasks().pipe(share())
   }
 
-  ngOnChanges() {
-    console.log("changes occured");
-    
-  }
 }

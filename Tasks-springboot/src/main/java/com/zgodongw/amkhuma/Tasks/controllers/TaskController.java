@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("api/tasks")
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class TaskController {
 
