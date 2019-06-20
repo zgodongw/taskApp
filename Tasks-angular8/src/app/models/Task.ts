@@ -1,7 +1,7 @@
 export interface Task {
-    id : Number
-    title : String
-    desc : String
+    id : number
+    title : string
+    desc : string
     type : number
-    color : String
+    color : string
 } 

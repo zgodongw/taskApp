@@ -23,10 +23,10 @@
                 <div class="waves-effect waves-light btn fill {{type.color}} ">{{type.name}}</div>
             </div>
         </div>
-        <div class="row">
+        <div  id="tasksSpace" class="row">
             <div class="col s3" ng-repeat="type in tasks.types">
                 <div ng-repeat="task in tasks.tasks | tasktype: type.id">
-                    <app-task task="task" move-forward="tasks.moveForward" move-back="tasks.moveBack" set-selected="tasks.setSelected" delete-task="tasks.deleteTask"></app-task>
+                    <app-task id="{{task.title + task.id}}" ng-mousemove="onMouseMove($event)"  ng-mousedown="taskOnClick(task)" ng-click="taskUnclicked()" task="task" move-forward="tasks.moveForward" move-back="tasks.moveBack" set-selected="tasks.setSelected" delete-task="tasks.deleteTask"></app-task>
                 </div>
             </div>
         </div>
@@ -63,10 +63,14 @@
     <script src="js/directives/appTask/appTask.js"></script>
     <script src="js/directives/appNewTask/appNewTask.js"></script>
     <script src="js/directives/appEditModal/appEditModal.js"></script>
+    <script src="js/directives/dragNdrops/dragNdrops.js"></script>
 
     <!-- Services -->
     <script src="utils/js/materialize/materialize.min.js"></script>
     <script src="js/services/tasks.js"></script>
+
+    <script src="drag-n-drop.js"></script>
+
 
 </body>
 </html>
